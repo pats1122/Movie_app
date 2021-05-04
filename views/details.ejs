@@ -1,0 +1,20 @@
+<%- include("./partials/header") %>
+
+<div class="container">  
+     <h1> Movie details are :</h1>
+     <%if(moviedetails.Rated==='PG-13'){%>
+        <div class="alert alert-danger" role="alert">
+            watch with your parents!
+          </div>
+        <%}%>
+      <h2> Title : <%=moviedetails.Title%></h2>
+      <p> Plot : <%= moviedetails.Plot %></p>
+      <h5> Ratings :</h5>
+      <ul>
+          <% moviedetails['Ratings'].forEach(function(rating){%>
+              <li><%= rating.Source%> - <%= rating.Value%> </li>
+          <%})%>
+      </ul>
+      </div>
+
+<%- include("./partials/footer") %>
